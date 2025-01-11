@@ -1,9 +1,13 @@
-# React + Vite
+React Portfolio
+This is a personal portfolio website built using React to showcase my skills, projects, and experiences as a Full Stack Developer.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features
+Fully responsive design for seamless viewing across devices.
+Sections for an introduction, skills, projects, and contact information.
+Smooth navigation with anchor links and React routing.
+Dynamic components for an interactive user experience.
+Tech Stack
+Frontend: React, Tailwind CSS
+Version Control: Git, GitHub
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# react-portfolio
+Link - https://somilarora-portfolio.vercel.app/
