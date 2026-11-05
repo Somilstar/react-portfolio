@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0a0b0c;
+  --color-panel: #111315;
+  --color-raised: #181b1e;
+  --color-line: rgb(255 255 255 / 0.09);
+  --color-line-strong: rgb(255 255 255 / 0.17);
+  --color-fg: #f2f3ef;
+  --color-muted: #a0a4a9;
+  --color-subtle: #72777d;
+  --color-accent: #c8f542;
+  --color-accent-dim: rgb(200 245 66 / 0.12);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --animate-flow: flow 2.6s linear infinite;
+  --animate-flow-y: flow-y 2.6s linear infinite;
+  --animate-pulse-dot: pulse-dot 2.4s ease-out infinite;
+
+  @keyframes flow {
+    from { left: -6px; }
+    to { left: 100%; }
+  }
+  @keyframes flow-y {
+    from { top: -6px; }
+    to { top: 100%; }
+  }
+  @keyframes pulse-dot {
+    0% { box-shadow: 0 0 0 0 rgb(200 245 66 / 0.5); }
+    70%, 100% { box-shadow: 0 0 0 7px rgb(200 245 66 / 0); }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  background: var(--color-ink);
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
+
+/* In the base layer so utilities such as focus-visible:outline-none can override it. */
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+.grain-grid {
+  background-image:
+    linear-gradient(var(--color-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-line) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+.chat-prose p + p,
+.chat-prose ul {
+  margin-top: 0.6rem;
+}
+.chat-prose ul {
+  list-style: disc;
+  padding-left: 1.1rem;
+}
+.chat-prose li + li {
+  margin-top: 0.25rem;
+}
+.chat-prose strong {
+  color: var(--color-fg);
+  font-weight: 600;
+}
+.chat-prose a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-flow,
+  .animate-flow-y {
+    display: none;
+  }
+  .animate-pulse-dot {
+    animation: none;
+  }
+}
