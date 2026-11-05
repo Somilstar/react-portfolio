@@ -26,6 +26,4 @@ Without an API key the site still works, and the assistant uses built-in offline
 | `src/lib/offline-answers.ts` | Fallback answers when the API is unavailable |
 | `src/components/` | Page sections and the assistant panel |
 
-## Deploying
 
-Deploys on Vercel. Add `GROQ_API_KEY`, `OPENROUTER_API_KEY`, or both under Project Settings > Environment Variables. Both have free tiers. Providers are tried in the order set in the chat route, and when their limits are reached the assistant switches to offline answers.
