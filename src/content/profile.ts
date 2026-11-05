@@ -10,10 +10,12 @@ export const profile = {
   github: "https://github.com/Somilstar",
   siteUrl: "https://somilarora-portfolio.vercel.app",
   resumeUrl: "/Somil-Arora-Resume.pdf",
-  availability: "Open to new-grad roles for 2027",
   headline: "I build cloud systems that hold up in production.",
   intro:
-    "Software developer and final-year Computer Science student at York University. Most recently at IBM, shipping cost-optimization features for Turbonomic across 3 cloud platforms.",
+    "I'm Somil Arora, a software developer and final-year Computer Science student at York University. Most recently at IBM, shipping cost-optimization features for Turbonomic across 3 cloud platforms.",
+  /** Shown in search results, so it leads with the name and stays under about 155 characters. */
+  description:
+    "Somil Arora is a software developer in Toronto and Computer Science student at York University, with IBM experience in cloud and distributed systems.",
   bio: [
     "I'm a Computer Science student at York University, graduating in April 2027. For the past 16 months I worked as a Software Developer Intern at IBM, where I shipped features across microservices, cloud probes, and customer-facing APIs on Turbonomic.",
     "My work sits at the point where backend engineering meets cloud infrastructure: gRPC schemas, Kubernetes support, feature-flagged rollouts, and production debugging. I also build with LLMs and RAG, and this site's assistant is one example.",

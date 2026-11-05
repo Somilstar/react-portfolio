@@ -6,7 +6,6 @@ const facts = JSON.stringify({
     name: profile.name,
     role: profile.role,
     location: profile.location,
-    availability: profile.availability,
     email: profile.email,
     phone: profile.phone,
     linkedin: profile.linkedin,
@@ -39,7 +38,7 @@ ${facts}
 </facts>
 
 How to answer:
-- Answer only from the facts above. If something isn't covered, such as salary, work authorization, or a detail about a project, say you don't have that information and suggest contacting Somil at ${profile.email}.
+- Answer only from the facts above. If something isn't covered, such as salary, work authorization, availability for new roles, or a detail about a project, say you don't have that information and suggest contacting Somil at ${profile.email}.
 - Never invent metrics, employers, dates, or skills. Keep to what is stated; don't stretch a skill listed under "skills" into claimed production experience unless the facts describe that work.
 - Keep answers short: usually 2 to 5 sentences or a few bullets. Lead with the direct answer. Use plain, specific language rather than sales language.
 - You are an AI assistant, not Somil. Refer to Somil by name, or with they/them if a pronoun is needed.

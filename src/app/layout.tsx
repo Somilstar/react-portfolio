@@ -5,17 +5,17 @@ import { GeistSans } from "geist/font/sans";
 import { profile } from "@/content/profile";
 import "./globals.css";
 
-const title = `${profile.name} | ${profile.role}`;
+const title = `${profile.name} | ${profile.role} in Toronto`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(profile.siteUrl),
   title,
-  description: profile.intro,
-  keywords: ["Somil Arora", "software developer", "distributed systems", "cloud", "Kubernetes", "IBM", "Toronto"],
+  description: profile.description,
   authors: [{ name: profile.name, url: profile.siteUrl }],
   alternates: { canonical: "/" },
-  openGraph: { title, description: profile.intro, url: "/", siteName: profile.name, type: "website" },
-  twitter: { card: "summary_large_image", title, description: profile.intro },
+  openGraph: { title, description: profile.description, url: "/", siteName: profile.name, type: "profile" },
+  twitter: { card: "summary_large_image", title, description: profile.description },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
 };
 
 export const viewport: Viewport = { themeColor: "#0a0b0c" };

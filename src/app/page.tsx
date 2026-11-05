@@ -7,19 +7,27 @@ import { Metrics } from "@/components/metrics";
 import { Nav } from "@/components/nav";
 import { Projects } from "@/components/projects";
 import { Skills } from "@/components/skills";
-import { education, ibm, profile } from "@/content/profile";
+import { education, profile } from "@/content/profile";
 
-const personJsonLd = {
+const structuredData = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: profile.name,
+  "@type": "ProfilePage",
   url: profile.siteUrl,
-  jobTitle: profile.role,
-  email: `mailto:${profile.email}`,
-  sameAs: [profile.linkedin, profile.github],
-  alumniOf: { "@type": "CollegeOrUniversity", name: education.school },
-  knowsAbout: ["Distributed systems", "Cloud infrastructure", "Kubernetes", "LLM integration"],
-  hasOccupation: { "@type": "Occupation", name: ibm.role },
+  name: `${profile.name} | ${profile.role}`,
+  mainEntity: {
+    "@type": "Person",
+    "@id": `${profile.siteUrl}/#person`,
+    name: profile.name,
+    url: profile.siteUrl,
+    image: `${profile.siteUrl}/images/somil-arora.jpg`,
+    jobTitle: profile.role,
+    description: profile.description,
+    email: `mailto:${profile.email}`,
+    address: { "@type": "PostalAddress", addressLocality: "Toronto", addressRegion: "ON", addressCountry: "CA" },
+    alumniOf: { "@type": "CollegeOrUniversity", name: education.school },
+    sameAs: [profile.linkedin, profile.github],
+    knowsAbout: ["Distributed systems", "Cloud infrastructure", "Kubernetes", "Microservices", "LLM integration"],
+  },
 };
 
 export default function Home() {
@@ -27,7 +35,7 @@ export default function Home() {
     <AssistantProvider>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c") }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
       />
       <Nav />
       <main>

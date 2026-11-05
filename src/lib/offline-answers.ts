@@ -43,7 +43,7 @@ const intents: { pattern: RegExp; answer: () => string }[] = [
   {
     pattern: /contact|email|phone|reach|hire|hiring|available|availability|linkedin|resume|\bcv\b/i,
     answer: () =>
-      `${profile.availability}. Reach Somil at ${profile.email} or on [LinkedIn](${profile.linkedin}), or read the [resume](${profile.resumeUrl}).`,
+      `Reach Somil at ${profile.email} or on [LinkedIn](${profile.linkedin}), or read the [resume](${profile.resumeUrl}).`,
   },
 ];
 

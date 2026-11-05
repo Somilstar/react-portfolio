@@ -18,6 +18,7 @@
   --animate-flow: flow 2.6s linear infinite;
   --animate-flow-y: flow-y 2.6s linear infinite;
   --animate-pulse-dot: pulse-dot 2.4s ease-out infinite;
+  --animate-rise: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
 
   @keyframes flow {
     from { left: -6px; }
@@ -26,6 +27,9 @@
   @keyframes flow-y {
     from { top: -6px; }
     to { top: 100%; }
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(20px); }
   }
   @keyframes pulse-dot {
     0% { box-shadow: 0 0 0 0 rgb(200 245 66 / 0.5); }
@@ -98,7 +102,8 @@ body {
   .animate-flow-y {
     display: none;
   }
-  .animate-pulse-dot {
+  .animate-pulse-dot,
+  .animate-rise {
     animation: none;
   }
 }

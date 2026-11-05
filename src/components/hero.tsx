@@ -1,7 +1,6 @@
 "use client";
 
 import { ArrowUp, ArrowUpRight, Sparkles } from "lucide-react";
-import { motion } from "motion/react";
 import { useState, type FormEvent } from "react";
 import { useAssistant } from "@/components/assistant";
 import { MeshField } from "@/components/mesh-field";
@@ -9,12 +8,6 @@ import { Container } from "@/components/ui";
 import { profile } from "@/content/profile";
 
 const suggestions = ["What did Somil ship at IBM?", "Is Somil a fit for a backend role?", "What's Somil's AI experience?"];
-
-const enter = (delay: number) => ({
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] as const },
-});
 
 export function Hero() {
   const { openAssistant } = useAssistant();
@@ -33,24 +26,24 @@ export function Hero() {
       <MeshField />
       <Container className="relative">
         <div className="max-w-[760px]">
-          <motion.p {...enter(0)} className="mb-7 flex w-fit items-center gap-2.5 rounded-full border border-line bg-panel/70 px-3 py-1.5 font-mono text-xs text-muted backdrop-blur">
-            <span className="size-1.5 animate-pulse-dot rounded-full bg-accent" />
-            {profile.availability}
-            <span className="hidden sm:contents">
-              <span className="text-subtle">/</span>
-              {profile.location}
-            </span>
-          </motion.p>
+          <h1 className="animate-rise mb-7 flex w-fit items-center gap-2.5 rounded-full border border-line bg-panel/70 px-3 py-1.5 font-mono text-xs font-normal text-muted backdrop-blur">
+            <span aria-hidden className="size-1.5 animate-pulse-dot rounded-full bg-accent" />
+            <span className="text-fg">{profile.name}</span>
+            <span aria-hidden className="text-subtle">/</span>
+            {profile.role}
+            <span aria-hidden className="hidden text-subtle sm:inline">/</span>
+            <span className="hidden sm:inline">{profile.location}</span>
+          </h1>
 
-          <motion.h1 {...enter(0.07)} className="text-[2.85rem] leading-[1.02] font-semibold tracking-[-0.045em] text-balance sm:text-6xl lg:text-[5.25rem]">
+          <p style={{ animationDelay: "70ms" }} className="animate-rise text-[2.85rem] leading-[1.02] font-semibold tracking-[-0.045em] text-balance sm:text-6xl lg:text-[5.25rem]">
             {profile.headline}
-          </motion.h1>
+          </p>
 
-          <motion.p {...enter(0.14)} className="mt-6 max-w-[600px] text-lg leading-relaxed text-muted">
+          <p style={{ animationDelay: "140ms" }} className="animate-rise mt-6 max-w-[600px] text-lg leading-relaxed text-muted">
             {profile.intro}
-          </motion.p>
+          </p>
 
-          <motion.div {...enter(0.21)} className="mt-9 max-w-[600px]">
+          <div style={{ animationDelay: "210ms" }} className="animate-rise mt-9 max-w-[600px]">
             <form onSubmit={submit} className="group flex items-center gap-3 rounded-xl border border-line-strong bg-panel/85 p-2 pl-4 shadow-[0_18px_60px_-30px_rgba(200,245,66,0.35)] backdrop-blur transition focus-within:border-accent/70">
               <Sparkles size={18} className="shrink-0 text-accent" aria-hidden />
               <input
@@ -76,9 +69,9 @@ export function Hero() {
                 </button>
               ))}
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div {...enter(0.28)} className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
+          <div style={{ animationDelay: "280ms" }} className="animate-rise mt-9 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
             <a href="#experience" className="font-medium underline decoration-line-strong underline-offset-4 transition hover:decoration-accent">
               See my work
             </a>
@@ -93,7 +86,7 @@ export function Hero() {
                 Resume <ArrowUpRight size={14} aria-hidden />
               </a>
             )}
-          </motion.div>
+          </div>
         </div>
       </Container>
     </section>

@@ -22,7 +22,7 @@ export function Contact() {
         <Reveal>
           <p className="mb-4 font-mono text-xs tracking-widest text-accent uppercase">Contact</p>
           <h2 className="max-w-4xl text-4xl leading-[1.05] font-semibold tracking-[-0.04em] text-balance md:text-7xl">
-            Hiring for 2027? Let&apos;s talk.
+            Let&apos;s connect.
           </h2>
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <a href={`mailto:${profile.email}`} className="flex h-12 items-center rounded-xl bg-accent px-5 font-medium text-ink transition hover:brightness-110">
