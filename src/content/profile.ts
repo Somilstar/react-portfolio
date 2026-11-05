@@ -8,7 +8,7 @@ export const profile = {
   phone: "+1 (647) 612-5182",
   linkedin: "https://linkedin.com/in/somil855",
   github: "https://github.com/Somilstar",
-  siteUrl: "https://somilarora-portfolio.vercel.app",
+  siteUrl: "https://www.somilarora.com",
   resumeUrl: "/Somil-Arora-Resume.pdf",
   headline: "I build cloud systems that hold up in production.",
   intro:

@@ -2,7 +2,7 @@
 
 Personal site with an AI assistant that answers questions about my work and checks fit against pasted job descriptions.
 
-Live: https://somilarora-portfolio.vercel.app
+Live: https://www.somilarora.com
 
 **Stack:** Next.js 16, React 19, TypeScript, Tailwind CSS 4, Motion, Groq and OpenRouter (free AI models)
 
